@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Website Klasifikasi Suara Lingkungan</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link
+      href="{{ url_for('static', filename='img/favicon.ico') }}"
+      rel="icon"
+    />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@200;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Hero Start -->
+    <div
+      class="container-fluid hero-header min-vh-100 d-flex align-items-center bg-abubiru"
+    >
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="display-4 text-white animated slideInRight">DLS</h1>
+            <p class="text-white mb-4 animated slideInRight">
+              Predict the sound of your surroundings.
+            </p>
+            <div class="d-flex flex-column align-items-center">
+              <div class="text-center">
+
+                <div class="text-center">
+                  <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap">
+                    <button id="recordBtn" class="btn btn-abubiru py-2 px-4 animated slideInRight">Rekam</button>
+                    <button id="stopBtn" class="btn btn-outline-abubiru py-1.5 px-4 animated slideInRight" disabled>Prediksi rekaman</button>
+                  </div>
+                </div>
+                
+                <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap mt-2">
+                  <label class="btn btn-abubiru py-2 px-4 animated slideInRight">
+                    Masukkan File suara
+                    <input type="file" id="audioInput" hidden accept="audio/*" />
+                  </label>
+                  <button
+                id="predictBtn"
+                class="btn btn-outline-abubiru py-1.6 px-4 animated slideInRight"
+              >
+                Prediksi file
+              </button>
+            </div>
+          </div> 
+                            
+              
+              <p
+                id="hasil"
+                class="alert alert-info mt-3"
+                style="display: none; background-color: #003366; color: white"
+              ></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              class="img-fluid animated pulse infinite"
+              src="{{ url_for('static', filename='img/kota2.png') }}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mainn.js') }}"></script>
+  </body>
+
+  <style>
+    .bg-abubiru {
+      background-color: #a0bcd0;
+    }
+
+    .btn-abubiru {
+      background-color: #124f7a;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-abubiru:hover {
+      background-color: #8db0c2;
+      color: #fff;
+    }
+
+    .btn-outline-abubiru {
+      color: #124f7a;
+      border: 2px solid #124f7a;
+      background-color: transparent;
+    }
+
+    .btn-outline-abubiru:hover {
+      background-color: #124f7a;
+      color: white;
+    }
+  </style>
+</html>
